@@ -1,0 +1,16 @@
+<svg id="Grupo_3" data-name="Grupo 3" xmlns="http://www.w3.org/2000/svg" width="102" height="102" viewBox="0 0 102 102">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #5f249e;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="51" cy="51" r="51"/>
+  <path id="Polygon_1" data-name="Polygon 1" class="cls-2" d="M1007.54,5312.21l-25.5,14.72v-29.45Z" transform="translate(-938 -5261)"/>
+</svg>

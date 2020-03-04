@@ -1,0 +1,23 @@
+/// Event wrapper
+/// @author SmartInCode $bg-url,
+
+/// Define color and height of box-elements
+@mixin bgc($bg-color, $min-height) {
+  background-color: $bg-color;
+  min-height: $min-height;
+}
+
+@mixin bgi($bg-image, $min-height, $bg-position: center, $bg-repeat: no-repeat, $bsize: cover) {
+  $bg-image: "../images/" + $bg-image;
+  background: url($bg-image) $bg-repeat $bg-position;
+  background-size: $bsize;
+  min-height: $min-height;
+}
+
+/// Define params Container
+@mixin container($max-width, $pad-left, $pad-right: $pad-left, $box-s: content-box) {
+  box-sizing: $box-s;
+  max-width: $max-width;
+  padding-left: $pad-left;
+  padding-right: $pad-right;
+}
