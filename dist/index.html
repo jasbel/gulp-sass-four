@@ -19,18 +19,16 @@
     rel="stylesheet">
   <!--  Principal CSS    -->
   <link rel="stylesheet" href="./css/styles.css">
-  <style>
-    html {
-      background-color: whitesmoke;
-    }
-  </style>
+
 </head>
 
 <body>
   <!--         Header            -->
-  <header>
+  <header class="main-header">
     <div class="header-menu">
-      <i class="header-menu-icon"></i>
+      <object data="./images/menu-icon.svg" type="image/svg+xml">
+        <img src="./images/menu-icon.png" alt="logo" type="image/svg+xml">
+      </object>
       <nav>
         <ul>
           <li><a href="#">HOME</a></li>
@@ -58,26 +56,36 @@
   <section class="hero">
     <div class="container">
       <h1>Vacuum Energy</h1>
-      <p>
+      <p class="italics">
         Replicating the magnetohydrodynamics occurring in a variety of astrophysical objects...
       </p>
-      <a href="#" class="btn">
+      <a href="#" class="violet-btn">
         READ MORE
       </a>
     </div>
   </section>
   <!--        End Hero         -->
 
-  <!--        about         -->
+  <!--        About         -->
   <section class="about">
     <div class="container">
-      <h2>About</h2>
-      <p>
-        Torus Tech is a specialized research and development company formed specifically to evolve the development of
-        technology invented by Unified Physicist Nassim Haramein. Torus Tech is delivering proof of concept prototypes
-        in the field of vacuum energy and related resonance technologies.
-      </p>
-      <a href="#" class="btn-link"> Read More</a>
+
+      <div class="about-history">
+        <p>
+          Torus Tech is a specialized research and development company formed specifically to evolve the development
+          of
+          technology invented by Unified Physicist Nassim Haramein. Torus Tech is delivering proof of concept
+          prototypes
+          in the field of vacuum energy and related resonance technologies.
+        </p>
+        <a href="#" class="btn-link"> Read More</a>
+      </div>
+      <div class="about-image">
+        <h2>About</h2>
+        <div>
+          <img src="./images/about.jpg" alt="">
+        </div>
+      </div>
     </div>
   </section>
   <!--        End about         -->
@@ -119,22 +127,25 @@
   <section class="tech">
     <div class="container">
       <h2>Technology</h2>
-      <div class="tech-history">
-        <img src="./images/tech-1.jpg" alt="">
-        <h3>Vacuum Energy</h3>
-        <p>
-          Energy extracted directly from the vacuum. Nothing to burn, nothing to consume, nothing to destroy. No fumes,
-          no toxins, no limitations. Nothing short of a paradigm shift which will alter the course of human kind
-          forever.
-        </p>
-      </div>
-      <div class="tech-history">
-        <img src="./images/tech-2.jpg" alt="">
-        <h3>Ark Crystal</h3>
-        <p>
-          Crystals. Precision engineered to specifically receive and store vacuum energy. Structure water, create
-          coherence, optimize biology for growth.
-        </p>
+      <div class="tech-content">
+        <div class="tech-history">
+          <img src="./images/tech-1.jpg" alt="">
+          <h3>Vacuum Energy</h3>
+          <p>
+            Energy extracted directly from the vacuum. Nothing to burn, nothing to consume, nothing to destroy. No
+            fumes,
+            no toxins, no limitations. Nothing short of a paradigm shift which will alter the course of human kind
+            forever.
+          </p>
+        </div>
+        <div class="tech-history">
+          <img src="./images/tech-2.jpg" alt="">
+          <h3>Ark Crystal</h3>
+          <p>
+            Crystals. Precision engineered to specifically receive and store vacuum energy. Structure water, create
+            coherence, optimize biology for growth.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -149,46 +160,48 @@
       </p>
     </div>
 
-    <div>
-      <div class="port-history">
-        <h2>Plasma flow interaction simulator</h2>
-        <img src="./images/portfolio-1.jpg" alt="portafolio imagen">
-
-      </div>
-
-      <div class="port-history">
-        <h2>Device and Method for Simulation of Magnetohydrodynamics </h2>
-        <img src="./images/portfolio-2.jpg" alt="portafolio imagen">
-      </div>
-
-      <div class="port-history">
-        <h2>Portfolio</h2>
-        <img src="./images/portfolio-3.jpg" alt="portafolio imagen">
-      </div>
-
-      <div class="port-history">
-        <h2>Modular Frames For Arrangement And Orientation Of Geometric Solids</h2>
-        <img src="./images/portfolio-4.jpg" alt="portafolio imagen">
-      </div>
+    <div class="port-history">
+      <h3>Plasma flow interaction simulator</h3>
+      <img src="./images/portfolio-1.jpg" alt="portafolio imagen">
     </div>
 
-    <div class="port-video">
+    <div class="port-history">
+      <h3>Device and Method for Simulation of Magnetohydrodynamics </h3>
+      <img src="./images/portfolio-2.jpg" alt="portafolio imagen">
+    </div>
+
+    <div class="port-history">
+      <h3>Precision Cut High &nbsp &nbsp &nbsp &nbsp &nbsp Energy Crystals</h3>
+      <img src="./images/portfolio-3.jpg" alt="portafolio imagen">
+    </div>
+
+    <div class="port-history">
+      <h3>Modular Frames For Arrangement And Orientation Of Geometric Solids</h3>
+      <img src="./images/portfolio-4.jpg" alt="portafolio imagen">
+    </div>
+  </section>
+  <!--        End Portfolio       -->
+
+  <!--        Video      -->
+  <section class="port-video">
+    <div class="container">
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
         magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
         pariatur.
       </p>
-      <img src="./images/portfolio-5.jpg" alt="">
-      <button>
-        <object data="./images/play-icon.svg" type="image/svg+xml">
-          <img src="./images/play-icon.png" alt="play-icon">
-        </object>
-      </button>
+      <div>
+        <img src="./images/portfolio-5.jpg" alt="">
+        <button>
+          <object data="./images/play-icon.svg" type="image/svg+xml">
+            <img src="./images/play-icon.png" alt="play-icon">
+          </object>
+        </button>
+      </div>
     </div>
-
   </section>
-  <!--        End Portfolio       -->
+  <!--        End Video -->
 
   <!--        Press       -->
   <section class="press">
@@ -220,7 +233,7 @@
   <!--        End Press       -->
 
   <!--        Footer         -->
-  <footer>
+  <footer class="main-footer">
     <div class="container">
       <div class="footer-head">
         <a href="/">

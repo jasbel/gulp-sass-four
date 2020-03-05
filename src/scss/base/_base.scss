@@ -16,20 +16,77 @@ html {
   padding: 0;
 }
 
-/**
- * Basic styles for links
- */
-a {
-  color: $brand-color;
-  text-decoration: none;
+///    h5 title
+// @include fonts($font-family-averta, SizeMedium, black, weightNormal, StyleNormal);
+h5 {
+  @include fonts($font-family-averta, 30px, $white-color, 300);
+}
 
-  @include on-event {
-    color: $text-color;
-    text-decoration: underline;
+h1 {
+  @include fonts($font-family-raleway, 127px, $white-color, 300);
+}
+
+p {
+  @include fonts($font-family-raleway, 18px, $black-color);
+  line-height: 36px;
+  &.italics {
+    @include fonts($font-family-raleway, 24px, $white-color, normal, italic);
+    line-height: normal;
   }
 }
 
-/*    h5 title    */
-h5 {
-  @include fonts($font-family-averta, medium, black, normal, normal);
+h2 {
+  @include fonts($font-family-raleway, 99px, $black-color, 900);
+}
+
+/// link
+a {
+  display: block;
+  text-decoration: none;
+  @include fonts($font-family-raleway, 21px, $white-color, 600);
+}
+
+h4 {
+  @include fonts($font-family-raleway, 30px, $white-color, 700);
+}
+
+h3 {
+  @include fonts($font-family-raleway, 31px, $black-color, 700);
+}
+/**
+ *  Class
+ */
+
+/* btn */
+.violet-btn {
+  $size: 68px;
+  max-width: 228px;
+  min-height: $size;
+  line-height: $size;
+  background-color: $violet-color;
+}
+
+.btn-link {
+  position: relative;
+  transition: all 0.3s ease;
+  width: max-content;
+  @include fonts($font-family-raleway, 24px, $black-color, 700);
+  &::before {
+    position: absolute;
+    content: "";
+    background-color: $black-color;
+    bottom: 0;
+    height: 1.5px;
+    width: 100%;
+  }
+  &:hover {
+    color: $violet-color;
+    &::before {
+      background-color: $violet-color;
+    }
+  }
+}
+
+.container {
+  @include container(1160px, 130px, 130px);
 }

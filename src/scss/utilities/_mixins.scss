@@ -3,7 +3,7 @@
 
 /// Define color and height of box-elements
 ///banckground color and height
-@mixin bgc($bg-color, $min-height) {
+@mixin bgc($min-height, $bg-color: transparent) {
   background-color: $bg-color;
   min-height: $min-height;
 }
@@ -25,10 +25,35 @@
 }
 
 ///fonts elements
-@mixin fonts($font-family, $font-size: medium, $font-color: black, $font-weight: normal, $font-style: normal) {
+@mixin fonts(
+  $font-family,
+  $font-size: medium,
+  $font-color: black,
+  $font-weight: normal,
+  $font-style: normal,
+  // $line-height: normal
+) {
   color: $font-color;
   font-family: $font-family;
   font-weight: $font-weight;
   font-size: $font-size;
   font-style: $font-style;
+  // line-height: $line-height;
+}
+
+///define flex center
+@mixin flexcen($align: center, $justify: center) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+///define absolute center
+@mixin abscen($top: 50%, $right: 50%, $bottom: auto, $left: auto) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  transform: translate($right, -$top);
+  position: absolute;
 }

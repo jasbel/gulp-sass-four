@@ -1,1 +1,37 @@
-// This file contains all styles related to the header of the site/application.
+// .main-header {
+//   @include bgi("header_bg.jpg", 880px);
+// }
+.main-header {
+  position: relative;
+
+  width: 100%;
+  @include bgc(245px);
+  @include flexcen(center, space-between);
+}
+
+.header-menu {
+  margin: 0;
+  object[data*="menu"] {
+    padding-left: 80px;
+  }
+  nav {
+    display: none;
+  }
+}
+
+.header-logo {
+  @include abscen();
+
+  object[data*="logo"] {
+  }
+  h5 {
+    text-transform: uppercase;
+  }
+}
+
+.header-search {
+  margin: 0;
+  object[data*="search"] {
+    padding-right: 48px;
+  }
+}
