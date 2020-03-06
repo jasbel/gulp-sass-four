@@ -6,8 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>MyWeb</title>
-  <!--    normalize    -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
   <!--    Font Awesome     -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" />
   <!--    Slick Slider     -->
@@ -23,14 +21,18 @@
 </head>
 
 <body>
+
+
+
   <!--         Header            -->
   <header class="main-header">
     <div class="header-menu">
-      <object data="./images/menu-icon.svg" type="image/svg+xml">
-        <img src="./images/menu-icon.png" alt="logo" type="image/svg+xml">
-      </object>
-      <nav>
-        <ul>
+      <nav id="menuToggle">
+        <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+        <ul id="menu-list">
           <li><a href="#">HOME</a></li>
           <li><a href="#">TECHNOLOGY</a></li>
           <li><a href="#">ABOUT</a></li>
@@ -40,8 +42,8 @@
       </nav>
     </div>
     <div class="header-logo">
-      <object data="./images/logo.svg" type="image/svg+xml">
-        <img src="./images/logo.png" alt="logo" type="image/svg+xml">
+      <object data="./images/logo-two.svg" type="image/svg+xml">
+        <img src="./images/logo-two.png" alt="logo" type="image/svg+xml">
       </object>
       <h5>torus tech</h5>
     </div>
@@ -249,71 +251,80 @@
           <li><a href="#">CONTACT</a></li>
         </ul>
         <div class="footer-icons">
-          <a href="#"> <i class="tiwer"></i> </a>
-          <a href="#"> <i class="facebook"></i> </a>
-          <a href="#"> <i class="linkedin"></i> </a>
+          <a href="#"><i class="fab fa-twitter"></i> </a>
+          <a href="#"> <i class="fab fa-facebook-f"></i> </a>
+          <a href="#"> <i class="fab fa-linkedin-in"></i> </a>
         </div>
       </div>
-      <div class="footer-body">
+    </div>
+
+    <div class="footer-body">
+      <div class="container">
         <div class="footer-box">
           <div class="logo-footer">
-            <object data="./images/logo.svg" type="image/svg+xml">
-              <img src="./images/logo.png" alt="logo">
-            </object>
+            <!-- <object data="./images/logo-two.svg" type="image/svg+xml"> -->
+            <img src="./images/logo-two.png" alt="logo">
+            <!-- </object> -->
           </div>
-          <h6>@TorusTech</h6>
           <div class="footer-body-history">
+            <h6>@TorusTech</h6>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do #EiusmodTempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim...
+              dolore magna aliqua. Ut
             </p>
-            <p><i class="arrow"></i>
-              <i class="flech"></i>
-              <i class="start"></i> </p>
-          </div>
-          <p>8h</p>
-        </div>
-        <div class="footer-box">
-          <div class="logo-footer">
-            <object data="./images/logo.svg" type="image/svg+xml">
-              <img src="./images/logo.png" alt="logo">
-            </object>
-          </div>
-          <h6>@TorusTech</h6>
-          <div class="footer-body-history">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do #EiusmodTempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim...
+              <i class="fa fa-reply"></i>
+              <i class="fa fa-retweet"></i>
+              <i class="fa fa-star"></i>
             </p>
-            <p><i class="arrow"></i>
-              <i class="flech"></i>
-              <i class="start"></i> </p>
-          </div>
-          <p>8h</p>
-        </div>
-        <div class="footer-box">
-          <div class="logo-footer">
-            <object data="./images/logo.svg" type="image/svg+xml">
-              <img src="./images/logo.png" alt="logo">
-            </object>
-          </div>
-          <h6>@TorusTech</h6>
-          <div class="footer-body-history">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do #EiusmodTempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim...
-            </p>
-            <p><i class="arrow"></i>
-              <i class="flech"></i>
-              <i class="start"></i> </p>
           </div>
           <p>8h</p>
         </div>
       </div>
-      <div class="footer-end">
-        <p>1001 Avenida Pico Ste. C #228 San Clemente, CA 92673 info@torustech.com</p>
-        <p>© 2016 by Torus Tech.</p>
+      <div class="footer-box">
+        <div class="logo-footer">
+          <!-- <object data="./images/logo-two.svg" type="image/svg+xml"> -->
+          <img src="./images/logo-two.png" alt="logo">
+          <!-- </object> -->
+        </div>
+        <div class="footer-body-history">
+          <h6>@TorusTech</h6>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do #EiusmodTempor incididunt ut labore et
+            dolore magna aliqua. Ut
+          </p>
+          <p><i class="fa fa-reply"></i>
+            <i class="fa fa-retweet"></i>
+            <i class="fa fa-star"></i> </p>
+        </div>
+        <p>8h</p>
       </div>
+      <div class="footer-box">
+        <div class="logo-footer">
+          <!-- <object data="./images/logo-two.svg" type="image/svg+xml"> -->
+          <img src="./images/logo-two.png" alt="logo">
+          <!-- </object> -->
+        </div>
+        <div class="footer-body-history">
+          <h6>@TorusTech</h6>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do #EiusmodTempor incididunt ut labore et
+            dolore magna aliqua. Ut
+          </p>
+          <p>
+            <i class="fa fa-reply"></i>
+            <i class="fa fa-retweet"></i>
+            <i class="fa fa-star"></i>
+          </p>
+        </div>
+        <p>8h</p>
+      </div>
+    </div>
+    <div class="footer-end">
+      <p>1001 Avenida Pico Ste. C #228 San Clemente, CA 92673 info@torustech.com</p>
+      <p>© 2016 by Torus Tech.</p>
+    </div>
+    <div class="footer-float">
     </div>
   </footer>
   <!--        End Footer         -->

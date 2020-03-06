@@ -5,14 +5,29 @@
   @include bgi("hero_bg.png", 880px);
   @include flexcen();
   text-align: center;
+  @media (max-width: 992px) {
+    min-height: 770px;
+  }
+  @media (max-width: 576px) {
+    min-height: 440px;
+  }
   h1 {
     padding-bottom: 50px;
+    @media (max-width: 576px) {
+      padding-top: 25px;
+      padding-bottom: 25px;
+    }
   }
   p {
     max-width: 600px;
     padding-bottom: 50px;
+    @media (max-width: 576px) {
+      padding-bottom: 25px;
+    }
   }
   a {
+    @media (max-width: 576px) {
+    }
   }
 }
 

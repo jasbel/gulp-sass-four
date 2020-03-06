@@ -2,30 +2,44 @@
 //   @include bgi("header_bg.jpg", 880px);
 // }
 .main-header {
-  position: relative;
-
+  position: absolute;
   width: 100%;
   @include bgc(245px);
   @include flexcen(center, space-between);
+  @media (max-width: 992px) {
+    min-height: 200px;
+  }
+  @media (max-width: 576px) {
+    min-height: auto;
+    margin: 25px auto;
+  }
 }
 
 .header-menu {
   margin: 0;
-  object[data*="menu"] {
-    padding-left: 80px;
-  }
-  nav {
-    display: none;
-  }
 }
-
 .header-logo {
-  @include abscen();
-
-  object[data*="logo"] {
-  }
+  // align-self: flex-end;
+  text-align: center;
   h5 {
+    padding-top: 13px;
     text-transform: uppercase;
+  }
+
+  @media (max-width: 992px) {
+    object {
+      width: 60px;
+      height: 60px;
+    }
+  }
+  @media (max-width: 576px) {
+    h5 {
+      padding-top: 6px;
+    }
+    object {
+      width: 40px;
+      height: 40px;
+    }
   }
 }
 
