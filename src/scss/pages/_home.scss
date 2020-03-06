@@ -36,80 +36,77 @@
  */
 .about {
   $padding-lr: 170px;
-  padding: 150px 0 210px;
-  .container {
-    display: flex;
+  padding: 140px 0 210px;
+  h2 {
+    padding-bottom: 75px;
+    padding-right: $padding-lr;
+    text-align: end;
   }
   .about-history {
+    // @include bgi("about_bg.png", auto, end, no-repeat, contain);
+    background-image: url(../images/about_bg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 170px);
+    position: relative;
     padding-left: $padding-lr;
-    padding-top: 160px;
-    width: 50%;
-    height: 100%;
+    padding-bottom: 100px;
     p {
+      margin-left: 0;
       background-color: $white-color;
+      max-width: 330px;
       padding-right: 70px;
       padding-bottom: 90px;
     }
     a {
-      margin-top: 70px;
       margin-left: 0;
+      padding: 70px 0 0;
     }
-  }
-  .about-image {
-    padding-right: $padding-lr;
-    width: 50%;
-    div {
-      position: relative;
-      margin-left: -160px;
-      z-index: -1;
-      @include flexcen(center, end);
-      @include bgi("about_bg.png", 600px, right bottom, no-repeat, fixed);
-      img {
-        margin-right: 0;
-        position: absolute;
-        top: 50%;
-        right: -85px;
-        transform: translate(0, -50%);
-      }
-    }
-    h2 {
-      padding-bottom: 75px;
-      text-align: end;
+    .about-image {
+      padding-right: $padding-lr;
+      position: absolute;
+      top: 50%;
+      right: -85px;
+      transform: translate(0, -50%);
     }
   }
 }
 
 /**
- *  teama
+ *  team
  */
 .team {
-  $margin: 150px;
-  display: flex;
-  justify-content: center;
+  display: inline-flex;
+  width: 100%;
   &-history {
-    margin: 0;
+    margin-right: 0;
     padding-top: 135px;
     padding-left: 110px;
     max-width: 560px;
     width: 39%;
-    @include bgi("team_bg.png", auto);
-    margin-bottom: $margin;
+    background-image: url("../images/team_bg.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    // background-size: cover;
     h2 {
+      margin: 0;
       padding-bottom: 35px;
+      max-width: max-content;
     }
     p {
+      margin: 0;
       max-width: 335px;
       padding-bottom: 40px;
     }
     a {
-      margin-left: 0;
-      padding-bottom: 170px;
+      margin: 0;
     }
   }
   &-photo {
     width: 100% - 39%;
     max-width: 880px;
-    margin-top: $margin;
+    margin-top: 150px;
+    margin-left: 0;
     // display: grid;
     // grid-template-columns: 1fr 1fr;
     display: flex;
@@ -117,6 +114,9 @@
     .team-person {
       width: 50%;
       position: relative;
+    }
+    .team-person:nth-child(2) h4 {
+      color: $black-color;
     }
     img {
       // height: 100%;
@@ -140,21 +140,25 @@
     padding-bottom: 60px;
   }
   &-content {
-    @include flexcen(center, stretch);
+    display: inline-flex;
+    width: 100%;
   }
 }
 .tech-history {
-  margin: 0;
-  &:first-child img {
-    padding-left: 40px;
-    padding-bottom: 100px;
+  &:first-child {
+    margin-right: 0;
+    img {
+      padding-left: 40px;
+    }
   }
-  &:last-child img {
-    padding-top: 80px;
-    padding-bottom: 55px;
+  &:last-child {
+    margin-left: 0;
+    img {
+      padding-top: 80px;
+    }
   }
-
   h3 {
+    padding-top: 40px;
     padding-bottom: 25px;
   }
   p {
@@ -170,21 +174,47 @@
 .port {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
   .port-home {
+    margin: 0;
+    padding: 130px 0 110px;
+    @include bgi("portfolio_bg.png", auto);
     width: 50%;
+    h2,
+    p {
+      margin-left: 0;
+      padding-left: 85px;
+      color: $white-color;
+    }
+    h2 {
+      padding-bottom: 40px;
+    }
+    p {
+      max-width: 440px;
+    }
   }
   .port-history {
+    margin: 0;
     position: relative;
     width: 33.33%;
+    text-align: end;
     &:first-child {
       width: 50%;
     }
-    &:nth-child(4) h3,
-    &:nth-child(5) h3 {
-      color: $white-color;
+    &:nth-child(4) {
+      background-color: #734fce;
+      h3 {
+        color: $white-color;
+      }
+    }
+    &:nth-child(5) {
+      background-color: #371a87;
+      h3 {
+        color: $white-color;
+      }
     }
     h3 {
+      max-height: 350px;
+      text-align: start;
       font-size: 24px;
       position: absolute;
       left: 75px;
@@ -192,6 +222,7 @@
     }
   }
 }
+
 /** 
  *  video
  */
@@ -218,6 +249,7 @@
  *    Press
  */
 .press {
+  @include bgi("press_bg.png", auto);
   padding: 160px 0;
   display: grid;
   grid-template-columns: 55fr 88fr;

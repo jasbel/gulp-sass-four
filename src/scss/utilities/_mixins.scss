@@ -16,6 +16,13 @@
   min-height: $min-height;
 }
 
+///banckground image and height
+@mixin bgio($bg-image, $bg-position: center, $bg-repeat: no-repeat, $bsize: cover) {
+  $bg-image: "../images/" + $bg-image;
+  background: url($bg-image) $bg-repeat $bg-position;
+  background-size: $bsize;
+}
+
 /// Define params Container width and padding
 @mixin container($max-width, $pad-left, $pad-right: $pad-left, $box-s: content-box) {
   box-sizing: $box-s;

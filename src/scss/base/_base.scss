@@ -89,6 +89,13 @@ h3 {
     font-size: 16px;
   }
 }
+
+h6 {
+  @include fonts($font-family-raleway, 12.22px, $silver-color, 900);
+  @media (max-width: 576px) {
+    font-size: 10px;
+  }
+}
 /**
  *  Class
  */
