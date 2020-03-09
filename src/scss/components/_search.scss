@@ -1,0 +1,106 @@
+.header-search {
+  position: absolute;
+  //   height: auto;
+  //   width: auto;
+  top: 50%;
+  left: calc(100% - 80px + 30px);
+  transform: translate(0, -50%);
+
+  &.on {
+    animation-name: in-out;
+    animation-duration: 0.7s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+  }
+
+  input {
+    box-sizing: border-box;
+    width: 42px;
+    height: 42px;
+    border: 2px solid $white-color;
+    border-radius: 50%;
+    background: none;
+    color: $white-color;
+    font-size: 15px;
+    font-weight: 400;
+    outline: 0;
+    transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out, padding 0.2s;
+    transition-delay: 0.4s;
+    transform: translate(-100%, -50%);
+  }
+
+  .search {
+    background: none;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 100%;
+    outline: 0;
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    transform: translate(-100%, -50%);
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 2px;
+      background-color: $white-color;
+      transform: rotate(45deg);
+      margin-top: 20px;
+      margin-left: 17px;
+      transition: 0.2s ease-in-out;
+    }
+  }
+
+  .close {
+    transition: 0.4s ease-in-out;
+    transition-delay: 0.4s;
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 27px;
+      height: 4px;
+      margin-top: -1px;
+      margin-left: -13px;
+      background-color: $white-color;
+      transform: rotate(45deg);
+      transition: 0.2s ease-in-out;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 27px;
+      height: 4px;
+      background-color: $white-color;
+      margin-top: -1px;
+      margin-left: -13px;
+      cursor: pointer;
+      transform: rotate(-45deg);
+    }
+  }
+
+  .square {
+    box-sizing: border-box;
+    padding: 0 40px 0 10px;
+    width: 300px;
+    height: 50px;
+    border: 2px solid $white-color;
+    border-radius: 0;
+    background: none;
+    color: $white-color;
+    font-size: 16px;
+    font-weight: 400;
+    outline: 0;
+    transition: width 0.4s ease-in-out, border-radius 0.4s ease-in-out, padding 0.2s;
+    transition-delay: 0.4s, 0s, 0.4s;
+    transform: translate(-100%, -50%);
+  }
+}

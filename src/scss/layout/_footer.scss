@@ -13,11 +13,10 @@
 
 .footer-head {
   @include flexcen(center, space-between);
-  min-height: 190px;
+  padding: 71px 0;
 
   .logo {
     text-align: center;
-    display: inline-flex;
     p {
       font-weight: 900;
       font-size: 21px;
@@ -25,8 +24,10 @@
     }
   }
   ul {
-    display: inline-flex;
     list-style-type: none;
+  }
+  li {
+    float: left;
   }
   a {
     padding: 0 22px;
@@ -34,7 +35,9 @@
   }
   .footer-icons {
     margin: 0;
-    display: inline-flex;
+    float: left;
+    @include flexcen(center, space-between);
+
     i {
       padding-left: 30px;
       color: $grey-color;
@@ -42,17 +45,15 @@
   }
 }
 
+.container.white-color {
+  background-color: $white-color;
+}
 .footer-body {
   background-color: $white-color;
   padding: 60px 0;
-
-  .container {
-    @include flexcen(center, space-between);
-  }
+  @include flexcen(center, space-between);
   .footer-box {
     margin: 0 30px 0 10px;
-    // width: 33.33%;
-    flex: 1 1 auto;
     @include flexcen(center, space-between);
     img {
       margin-right: 23px;

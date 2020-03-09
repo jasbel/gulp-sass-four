@@ -1,1 +1,1 @@
-console.log("init javascript");
+$(document).ready(function(){const a=document.getElementById("search-input"),b=document.getElementById("search-btn");b.addEventListener("click",()=>{b.classList.toggle("close"),a.classList.toggle("square")}),$(".press-slider").slick({infinite:!0,slidesToShow:3,slidesToScroll:3})});
