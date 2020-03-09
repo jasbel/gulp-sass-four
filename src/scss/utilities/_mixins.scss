@@ -54,6 +54,11 @@
   align-items: $align;
   justify-content: $justify;
 }
+@mixin flexceno($justify: center, $align: center) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
 
 ///define absolute center
 @mixin abscen($top: 50%, $right: 50%, $bottom: auto, $left: auto) {

@@ -1,6 +1,6 @@
 .main-footer {
   position: relative;
-  @include bgi("footer_bg-1.png", auto, 0, no-repeat, contain);
+  @include bgio("footer_bg-1.png", 0, no-repeat, contain);
   .footer-float {
     bottom: 0;
     background-color: $end-footer-color;
@@ -13,8 +13,11 @@
 
 .footer-head {
   @include flexcen(center, space-between);
-  padding: 71px 0;
-
+  flex-wrap: wrap;
+  padding: 60px 0;
+  @media (max-width: 1200px) {
+    padding: 20px 0;
+  }
   .logo {
     text-align: center;
     p {
@@ -25,33 +28,51 @@
   }
   ul {
     list-style-type: none;
+    display: flex;
+    @media (max-width: 1200px) {
+      width: 100%;
+      padding: 10px 0;
+    }
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+    }
   }
   li {
-    float: left;
-  }
-  a {
-    padding: 0 22px;
-    color: $black-color;
+    a {
+      padding: 0 22px;
+      color: $black-color;
+    }
+    @media (max-width: 768px) {
+      padding: 5px 50px;
+      width: 100%;
+    }
   }
   .footer-icons {
-    margin: 0;
-    float: left;
-    @include flexcen(center, space-between);
+    margin: 0 auto;
+    @include flexceno(space-between);
 
     i {
       padding-left: 30px;
       color: $grey-color;
     }
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
   }
 }
 
-.container.white-color {
-  background-color: $white-color;
-}
 .footer-body {
   background-color: $white-color;
   padding: 60px 0;
-  @include flexcen(center, space-between);
+  @media (max-width: 992px) {
+    padding: 30px 0;
+  }
+  .container {
+    @include flexceno(space-between);
+    @media (max-width: 992px) {
+      flex-wrap: wrap;
+    }
+  }
   .footer-box {
     margin: 0 30px 0 10px;
     @include flexcen(center, space-between);
@@ -63,13 +84,17 @@
       color: $silver-color;
       font-weight: 900;
     }
+    @media (max-width: 992px) {
+      max-width: 576px;
+      margin: 0 auto;
+    }
   }
   &-history {
     p {
       line-height: normal;
       font-size: 11px;
       font-weight: 500;
-      min-width: 245px;
+      max-width: 245px;
       color: $grey-color;
       padding-top: 8px;
 
@@ -77,6 +102,11 @@
         font-size: 12px;
         padding-right: 5px;
         color: $silver-color;
+      }
+    }
+    @media (max-width: 992px) {
+      p {
+        max-width: none;
       }
     }
   }
@@ -93,5 +123,9 @@
     &:first-child {
       padding-bottom: 5px;
     }
+  }
+  @media (max-width: 768px) {
+    padding: 15px 0;
+    background-color: $white-color;
   }
 }

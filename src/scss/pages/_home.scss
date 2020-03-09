@@ -43,11 +43,7 @@
     text-align: end;
   }
   .about-history {
-    // @include bgi("about_bg.png", auto, end, no-repeat, contain);
-    background-image: url(../images/about_bg.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: calc(100% - 170px);
+    @include bgio("about_bg.png", calc(100% - 170px), no-repeat, contain);
     position: relative;
     padding-left: $padding-lr;
     padding-bottom: 100px;
@@ -70,62 +66,127 @@
       transform: translate(0, -50%);
     }
   }
+  @media (max-width: 1200px) {
+    padding: 100px 0 220px;
+    .about-history {
+      padding-left: 100px;
+      background-position: 100%;
+      a {
+        padding: 0;
+      }
+      .about-image {
+        padding-right: 0;
+        top: auto;
+        bottom: 0;
+        right: 0;
+        transform: translate(0, 0);
+      }
+    }
+  }
+  @media (max-width: 992px) {
+    .about-history {
+      padding-left: $padding-lr;
+      background-size: cover;
+      p {
+        background-color: transparent;
+        padding: 15px;
+        color: $white-color;
+        margin: 0 auto;
+      }
+      a {
+        color: $white-color;
+        margin: 0 auto;
+        padding: 15px;
+      }
+      .about-image {
+        position: relative;
+        text-align: center;
+      }
+    }
+  }
+  @media (max-width: 576px) {
+    .about-history {
+      padding: 15px;
+    }
+    img {
+      width: 100%;
+    }
+  }
 }
 
 /**
  *  team
  */
 .team {
-  display: inline-flex;
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
   &-history {
     margin-right: 0;
     padding-top: 135px;
-    padding-left: 110px;
-    max-width: 560px;
     width: 39%;
-    background-image: url("../images/team_bg.png");
-    background-repeat: no-repeat;
-    background-position: right;
-    // background-size: cover;
+    height: min-content;
+    @include bgio("team_bg.png", right);
+    h2,
+    p,
+    a {
+      margin: 0 110px;
+      @media (max-width: 1200px) {
+        margin: 0 auto;
+        text-align: center;
+      }
+    }
     h2 {
-      margin: 0;
-      padding-bottom: 35px;
-      max-width: max-content;
+      padding-bottom: 30px;
     }
     p {
-      margin: 0;
       max-width: 335px;
-      padding-bottom: 40px;
+      padding-bottom: 35px;
     }
     a {
-      margin: 0;
+      padding-bottom: 170px;
+    }
+    @media (max-width: 1200px) {
+      width: 100%;
     }
   }
   &-photo {
-    width: 100% - 39%;
-    max-width: 880px;
-    margin-top: 150px;
-    margin-left: 0;
-    // display: grid;
-    // grid-template-columns: 1fr 1fr;
     display: flex;
     flex-wrap: wrap;
-    .team-person {
-      width: 50%;
-      position: relative;
-    }
-    .team-person:nth-child(2) h4 {
-      color: $black-color;
-    }
-    img {
-      // height: 100%;
+    align-items: flex-end;
+    margin: 150px 0 0;
+    width: 61%;
+    @media (max-width: 1200px) {
+      margin: 0 auto;
       width: 100%;
     }
+  }
+}
+
+.team-person {
+  width: 50%;
+  position: relative;
+  height: min-content;
+  &:nth-child(2) h4 {
+    color: $black-color;
+  }
+  h4 {
+    position: absolute;
+    top: 54px;
+    left: 54px;
+  }
+  img {
+    width: 100%;
+  }
+  @media (max-width: 576px) {
+    width: 100%;
+    margin: 0 20px;
     h4 {
       position: absolute;
-      top: 54px;
-      left: 54px;
+      top: 15px;
+      left: 0;
+      width: 100%;
+      text-align: center;
     }
   }
 }
@@ -138,33 +199,61 @@
   h2 {
     text-align: center;
     padding-bottom: 60px;
+    @media (max-width: 576px) {
+      padding-bottom: 30px;
+    }
   }
   &-content {
     display: inline-flex;
     width: 100%;
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+    }
+  }
+  @media (max-width: 992px) {
+    padding: 100px 0 150px;
+  }
+  @media (max-width: 576px) {
+    padding: 50px 0;
   }
 }
+
 .tech-history {
   &:first-child {
     margin-right: 0;
     img {
       padding-left: 40px;
+      @media (max-width: 768px) {
+        padding: 0;
+      }
     }
   }
   &:last-child {
     margin-left: 0;
     img {
       padding-top: 80px;
+      @media (max-width: 576px) {
+        padding-top: 40px;
+      }
     }
   }
   h3 {
     padding-top: 40px;
     padding-bottom: 25px;
+    @media (max-width: 576px) {
+      padding-top: 20px;
+      padding-bottom: 10px;
+    }
   }
   p {
     margin-left: 0;
     max-width: 400px;
     padding-right: 80px;
+  }
+  @media (max-width: 1200px) {
+    img {
+      max-width: 100%;
+    }
   }
 }
 
@@ -174,55 +263,93 @@
 .port {
   display: flex;
   flex-wrap: wrap;
-  .port-home {
-    margin: 0;
-    padding: 130px 0 110px;
-    @include bgi("portfolio_bg.png", auto);
-    width: 50%;
-    h2,
-    p {
-      margin-left: 0;
-      padding-left: 85px;
-      color: $white-color;
-    }
-    h2 {
-      padding-bottom: 40px;
-    }
-    p {
-      max-width: 440px;
-    }
-  }
   .port-history {
     margin: 0;
-    position: relative;
-    width: 33.33%;
-    text-align: end;
-    &:first-child {
-      width: 50%;
-    }
-    &:nth-child(4) {
-      background-color: #734fce;
-      h3 {
-        color: $white-color;
+    width: 33.3%;
+    min-height: 430px;
+    h2,
+    p {
+      color: $white-color;
+      max-width: 520px;
+      margin-left: 85px;
+      @media (max-width: 1200px) {
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-left: auto;
       }
     }
-    &:nth-child(5) {
-      background-color: #371a87;
-      h3 {
-        color: $white-color;
-      }
+    h2 {
+      padding-bottom: 25px;
     }
     h3 {
-      max-height: 350px;
-      text-align: start;
+      padding-top: 75px;
+      margin-left: 75px;
+      max-width: 350px;
       font-size: 24px;
-      position: absolute;
-      left: 75px;
-      top: 75px;
+      color: $black-color;
+      @media (max-width: 992px) {
+        padding-top: 30px;
+        margin-left: 35px;
+      }
+    }
+    div {
+      height: 100%;
     }
     img {
+      position: static;
+    }
+
+    @media (max-width: 992px) {
+      min-height: 380px;
+      width: 50%;
+    }
+    @media (max-width: 576px) {
+      min-height: 320px;
       width: 100%;
     }
+  }
+}
+
+.port-history {
+  &:first-child {
+    padding: 120px 0 100px;
+    width: 50%;
+    @include bgio("portfolio_bg.png");
+    @media (max-width: 992px) {
+      width: 100%;
+    }
+    @media (max-width: 576px) {
+      padding: 50px 0;
+      min-height: auto;
+
+      h2 {
+        text-align: center;
+      }
+      p {
+        max-width: 300px;
+      }
+    }
+  }
+  &:nth-child(2) {
+    background-color: $white-color;
+    width: 50%;
+    @include bgio("portfolio-1.jpg");
+
+    @media (max-width: 576px) {
+      width: 100%;
+    }
+  }
+  &:nth-child(3) {
+    background-color: $white-color;
+    @include bgio("portfolio-2.jpg");
+  }
+  &:nth-child(4) {
+    background-color: $violet-light-background-color;
+    @include bgio("portfolio-3.jpg");
+  }
+  &:nth-child(5) {
+    background-color: $violet-background-color;
+    @include bgio("portfolio-4.jpg");
   }
 }
 
@@ -230,20 +357,40 @@
  *  video
  */
 .port-video {
-  // 140 155
-  padding-top: 140px;
-  padding-bottom: 155px;
-  .container {
-    @include flexcen(center, stretch);
+  padding: 140px 0 155px;
+  @media (max-width: 992px) {
+    padding: 100px 0;
   }
-  p {
-    max-width: 380px;
-    padding-right: 110px;
+  @media (max-width: 576px) {
+    padding: 50px 0;
   }
+}
+.video-content {
+  @include flexcen(center, stretch);
+  flex-wrap: wrap;
   div {
+    width: 50%;
     position: relative;
+    text-align: center;
+    p {
+      max-width: 380px;
+      margin-right: 100px;
+      text-align: start;
+    }
     object[data*="play"] {
       @include abscen();
+    }
+    img {
+      width: 100%;
+    }
+    @media (max-width: 1200px) {
+      p {
+        padding: 10px;
+        margin-right: auto;
+      }
+    }
+    @media (max-width: 992px) {
+      width: 100%;
     }
   }
 }
@@ -277,3 +424,7 @@
 
 /* 
  *    */
+
+.press {
+  display: none;
+}
